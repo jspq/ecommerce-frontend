@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <h3 class="text-center mt-4">Registro</h3>
+<form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm" class="p-4 border rounded shadow-sm">
+    <div class="mb-3">
+      <label for="username" class="form-label">Nombre de Usuario</label>
+      <input type="text" id="username" name="username" class="form-control" required [(ngModel)]="registerData.username" />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Correo Electrónico</label>
+      <input type="email" id="email" name="email" class="form-control" required [(ngModel)]="registerData.email" />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña</label>
+      <input type="password" id="password" name="password" class="form-control" required [(ngModel)]="registerData.password" />
+    </div>
+    <div class="mb-3">
+      <label for="firstName" class="form-label">Nombres</label>
+      <input type="text" id="firstName" name="firstName" class="form-control" required [(ngModel)]="registerData.names" />
+    </div>
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Apellidos</label>
+      <input type="text" id="lastName" name="lastName" class="form-control" required [(ngModel)]="registerData.surnames" />
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Dirección</label>
+      <input type="text" id="address" name="address" class="form-control" required [(ngModel)]="registerData.adress" />
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Registrarse</button>
+    <div class="text-center mt-3">
+      <span>¿Ya tienes cuenta?</span>
+      <a routerLink="/login">Iniciar sesión</a>
+    </div>
+  </form>
+      </div>
+    </div>
+  </div>

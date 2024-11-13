@@ -1,0 +1,23 @@
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .col-md-6.d-none.d-md-block {
+    background: url('https://via.placeholder.com/600x800') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .card h3 {
+    color: #007bff;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+  }
