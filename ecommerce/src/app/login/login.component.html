@@ -1,0 +1,34 @@
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="container mt-5">
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input 
+        type="text" 
+        id="username" 
+        name="username" 
+        [(ngModel)]="username" 
+        required 
+        #usernameCtrl="ngModel" 
+        class="form-control"
+    />
+      <div *ngIf="usernameCtrl.invalid && usernameCtrl.touched">
+        <small *ngIf="usernameCtrl.errors?.['required']" class="text-danger">Username is required.</small>
+    </div>
+    </div>
+    <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+        <input 
+        type="password" 
+        id="password" 
+        name="password" 
+        [(ngModel)]="password" 
+        required 
+        #passwordCtrl="ngModel" 
+        class="form-control"
+    />
+      <div *ngIf="passwordCtrl.invalid && passwordCtrl.touched">
+        <small *ngIf="passwordCtrl.errors?.['required']" class="text-danger">Password is required.</small>
+        </div>
+    </div>
+
+    <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+</form>
