@@ -12,11 +12,16 @@ import { AuthService } from './services/authorization/auth.service';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
+import { CommonModule } from '@angular/common';
+import { RoleDirective } from './directives/role.directive';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
-  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]}
+  {path: 'register', component: RegisterComponent},
+  {path: 'header', component: HeaderComponent, canActivate: [AuthGuard]},
+  {path: 'home', component: HomeComponent}
 ]
 
 @NgModule({
@@ -25,13 +30,17 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent,
+    RoleDirective
   ],
+  exports: [RoleDirective],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [
     AuthService,

@@ -1,0 +1,40 @@
+.navbar {
+  background-color: #007bff;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: white !important;
+  padding: 8px 16px;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  background-color: #0056b3 !important;
+}
+
+.dropdown-menu {
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #007bff !important; 
+  border: none;
+  z-index: 1050;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #0056b3 !important;
+}
+
+.navbar-brand {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+

@@ -9,15 +9,17 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  username: string = '';
-  password: string = '';
+  loginData = {
+    username: '',
+    password: ''
+  }
 
   constructor(private authService: AuthService,
     private router: Router
   ) {}
 
   onSubmit() {
-    if(this.username && this.password) {
+    if(this.loginData.username && this.loginData.password) {
       this.login()
     } else {
       console.log('Diligencia los campos')
@@ -25,7 +27,7 @@ export class LoginComponent {
   }
 
   login(): void {
-    this.authService.login(this.username, this.password).subscribe(
+    this.authService.login(this.loginData.username, this.loginData.password).subscribe(
       respose => {
         this.router.navigate(['/home'])
       }
