@@ -1,4 +1,9 @@
+.div-footer {
+  padding: 30px;
+}
+
 .footer {
+  padding-top: 30px;
     background-color: #343a40;
     color: #fff;
   }

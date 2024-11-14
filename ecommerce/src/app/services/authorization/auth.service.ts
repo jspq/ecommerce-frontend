@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { jwtDecode } from 'jwt-decode';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { RegisterRequestDTO } from 'src/app/models/register-request.dto';
 
@@ -21,6 +22,7 @@ export class AuthService {
       tap((response: any) =>{
         localStorage.setItem('token', response.token);
         localStorage.setItem('role', JSON.stringify(response.roles));
+        localStorage.setItem('userId', response.userId.toString());
         this.authStatus.next(true);
       })
     )
@@ -44,6 +46,11 @@ export class AuthService {
 
   getToken(): string | null {
     return localStorage.getItem('token');
+  }
+
+  getUserId(): number | null {
+    const userId = localStorage.getItem('userId');
+    return userId ? parseInt(userId, 10) : null;
   }
 
   getRole(): string | null {

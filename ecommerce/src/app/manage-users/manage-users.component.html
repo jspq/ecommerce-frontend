@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Gestión de Usuarios</h2>
+    
+    <!-- Tabla de usuarios -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre de Usuario</th>
+          <th>Email</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteUser(user.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
