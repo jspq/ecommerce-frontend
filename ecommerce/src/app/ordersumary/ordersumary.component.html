@@ -1,0 +1,26 @@
+<div class="order-summary">
+    <h2 class="summary-title">Resumen de la Orden</h2>
+  
+    <!-- Resumen de los productos -->
+    <div *ngIf="orderProducts && orderProducts.length > 0">
+      <div class="product-list">
+        <div class="product-item" *ngFor="let product of orderProducts">
+          <div class="product-details">
+            <span class="product-name">{{ product.productName }}</span>
+            <span class="product-amount">{{ product.amount }} x {{ product.price | currency }}</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Resumen total -->
+      <div class="total-summary">
+        <p><strong>Total: </strong>{{ totalPrice | currency }}</p>
+        <button class="pay-button" (click)="payOrder()">Pagar</button>
+      </div>
+    </div>
+  
+    <!-- Si no hay productos -->
+    <div *ngIf="!orderProducts || orderProducts.length === 0">
+      <p class="no-products-message">No hay productos en la orden.</p>
+    </div>
+  </div>

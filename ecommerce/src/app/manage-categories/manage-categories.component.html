@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Gestión de Categorías</h2>
+
+    <form (ngSubmit)="addCategory()" class="mb-4">
+      <div class="form-group">
+        <label for="categoryName">Nombre de la Categoría</label>
+        <input
+          id="categoryName"
+          [(ngModel)]="newCategoryName"
+          name="categoryName"
+          class="form-control"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-success mt-2">Agregar Categoría</button>
+    </form>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre de la Categoría</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories">
+          <td>{{ category.name }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteCategory(category.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

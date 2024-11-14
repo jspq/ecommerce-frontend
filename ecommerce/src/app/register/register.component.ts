@@ -30,7 +30,6 @@ export class RegisterComponent {
 
     this.authService.registerUser(this.registerData).subscribe(
       (response) => {
-        // Si el registro es exitoso
         Swal.fire({
           icon: 'success',
           title: '¡Usuario registrado!',
@@ -38,13 +37,11 @@ export class RegisterComponent {
           confirmButtonText: 'Iniciar Sesión'
         }).then((result) => {
           if (result.isConfirmed) {
-            // Redirigir al login
             this.router.navigate(['/login']);
           }
         });
       },
       (error) => {
-        // Si hubo un error
         Swal.fire({
           icon: 'error',
           title: 'Error',

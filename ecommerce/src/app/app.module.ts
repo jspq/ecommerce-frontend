@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -15,13 +15,31 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { CommonModule } from '@angular/common';
 import { RoleDirective } from './directives/role.directive';
+import { ProductComponent } from './product/product.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { OrdersumaryComponent } from './ordersumary/ordersumary.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { InventoryComponent } from './inventory/inventory.component';
+import { ManageProductComponent } from './manage-product/manage-product.component';
+import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: '', redirectTo: '/products', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'header', component: HeaderComponent, canActivate: [AuthGuard]},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
+  {path: 'products', component: ProductComponent, canActivate: [AuthGuard]},
+  {path: 'products/:id', component: ProductDetailsComponent, canActivate: [AuthGuard]},
+  {path: 'summary', component: OrdersumaryComponent, canActivate: [AuthGuard]},
+  {path: 'user-update/:id', component: UpdateUserComponent, canActivate: [AuthGuard]},
+  {path: 'inventory', component: InventoryComponent, canActivate: [AuthGuard]},
+  {path: 'manage-product', component: ManageProductComponent, canActivate: [AuthGuard]},
+  {path: 'manage-users', component: ManageUsersComponent, canActivate: [AuthGuard]},
+  {path: 'categories', component: ManageCategoriesComponent, canActivate: [AuthGuard]},
+  {path: 'orders', component: OrdersComponent, canActivate: [AuthGuard]}
 ]
 
 @NgModule({
@@ -32,7 +50,16 @@ const routes: Routes = [
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    RoleDirective
+    RoleDirective,
+    ProductComponent,
+    ProductDetailsComponent,
+    OrdersumaryComponent,
+    UpdateUserComponent,
+    InventoryComponent,
+    ManageProductComponent,
+    ManageCategoriesComponent,
+    ManageUsersComponent,
+    OrdersComponent
   ],
   exports: [RoleDirective],
   imports: [

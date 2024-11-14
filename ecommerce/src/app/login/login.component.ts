@@ -29,7 +29,7 @@ export class LoginComponent {
   login(): void {
     this.authService.login(this.loginData.username, this.loginData.password).subscribe(
       respose => {
-        this.router.navigate(['/home'])
+        this.router.navigate(['/products'])
       }
     )
   }

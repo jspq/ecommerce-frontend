@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Historial de Órdenes</h2>
+  
+    <!-- Listado de órdenes -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre del Producto</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.productName }}</td>
+          <td>{{ order.amount }}</td>
+          <td>{{ order.price | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

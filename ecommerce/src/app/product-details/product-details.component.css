@@ -1,0 +1,15 @@
+.container {
+    margin-bottom: 50px; /* Ajusta el valor según lo que necesites */
+}
+
+.card-body .btn {
+  font-size: 16px; /* Tamaño de fuente uniforme */
+  padding: 12px; /* Tamaño uniforme para todos los botones */
+  text-align: center; /* Centrado del texto */
+  border-radius: 5px; /* Bordes redondeados */
+  font-weight: bold; /* Texto más destacado */
+}
+
+.card-body .btn:hover {
+  opacity: 0.9; /* Agrega un efecto al pasar el ratón */
+}
