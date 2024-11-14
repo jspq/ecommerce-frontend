@@ -1,0 +1,18 @@
+<div *ngIf="product" class="container mt-4">
+    <div class="row">
+      <div class="col-md-6">
+        <img [src]="'https://via.placeholder.com/500'" class="img-fluid" alt="Imagen del producto">
+      </div>
+      <div class="col-md-6">
+        <h2>{{ product.name }}</h2>
+        <p><strong>Descripción:</strong> {{ product.description }}</p>
+        <p><strong>Precio:</strong> ${{ product.price }}</p>
+        <p><strong>Estado:</strong> {{ product.isActive ? 'Activo' : 'Inactivo' }}</p>
+        <p><strong>Categoría:</strong> {{ product.catalogId }}</p>
+        <div class="d-grid gap-2">
+          <a href="#" class="btn btn-primary">Volver</a>
+          <a href="#" class="btn btn-success">Agregar al carrito</a>
+        </div>
+      </div>
+    </div>
+  </div>

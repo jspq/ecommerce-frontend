@@ -1,6 +1,6 @@
 <nav *ngIf="isAuthenticated" class="navbar navbar-expand-lg navbar-light" style="background-color: #007bff;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/home">E-commerce Challenge</a>
+    <a class="navbar-brand" href="/products">E-commerce Challenge</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,19 +10,25 @@
           <a class="nav-link" routerLink="/products" routerLinkActive="active">Productos</a>
         </li>
         <li class="nav-item" *ngIf="userRoles.includes('ROLE_USER')">
-          <a class="nav-link" routerLink="/cart" routerLinkActive="active">Carrito de Compras</a>
+          <a class="nav-link" routerLink="/summary" routerLinkActive="active">Carrito de Compras</a>
+        </li>
+        <li class="nav-item" *ngIf="userRoles.includes('ROLE_USER')">
+          <a class="nav-link" routerLink="/orders" routerLinkActive="active">Ordenes</a>
         </li>
         <li class="nav-item" *ngIf="userRoles.includes('ROLE_ADMIN')">
           <a class="nav-link" routerLink="/inventory" routerLinkActive="active">Inventario</a>
         </li>
         <li class="nav-item" *ngIf="userRoles.includes('ROLE_ADMIN')">
-          <a class="nav-link" routerLink="/users" routerLinkActive="active">Gestionar Usuarios</a>
+          <a class="nav-link" routerLink="/categories" routerLinkActive="active">Categorias</a>
+        </li>
+        <li class="nav-item" *ngIf="userRoles.includes('ROLE_ADMIN')">
+          <a class="nav-link" routerLink="/manage-users" routerLinkActive="active">Gestionar Usuarios</a>
         </li>
         <li class="nav-item" *ngIf="userRoles.includes('ROLE_ADMIN')">
           <a class="nav-link" routerLink="/reports"  routerLinkActive="active">Reportes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active">Actualizar Datos</a>
+          <a class="nav-link" [routerLink]="['/user-update', userId]" routerLinkActive="active">Gestionar Usuario</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" (click)="onLogout()">Cerrar Sesión</a>

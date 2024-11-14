@@ -1,0 +1,53 @@
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #555;
+}
+
+.btn {
+  text-align: center; /* Centra el texto dentro del botón */
+  font-size: 0.9rem;  /* Ajusta el tamaño de la fuente */
+  padding: 10px 15px; /* Espaciado dentro del botón */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-success {
+  background-color: #28a745; /* Botón verde */
+  border: none;
+}
+
+.btn:hover {
+  opacity: 0.9; /* Efecto al pasar el mouse */
+}
+
+.mt-2 {
+  margin-top: 10px;
+}
+
+.btn-block {
+  width: 100%; /* Hace que los botones ocupen todo el ancho disponible */
+}
